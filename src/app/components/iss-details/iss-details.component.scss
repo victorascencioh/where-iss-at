@@ -1,0 +1,34 @@
+.iss-content {
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.iss-details,
+.iss-picture {
+  width: 100%;
+    @media only screen and (min-width: 768px) {
+        width: 45%;
+    }
+}
+
+.iss-details__subtitle {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+.button-print {
+  width: 100%;
+  margin-top: 10px;
+  @media only screen and (min-width: 768px) {
+    display: block;
+    width: 45%;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,47 @@
+<div>
+    <form [formGroup]="issFG" (ngSubmit)="submitForm()">
+        <div class="form-item">
+            <label class="form-item__label">{{issFG.ISS_FORM_TITLES.altitude | uppercase }}:</label>
+            <mat-form-field appearance="fill" class="form-item__select">
+                <mat-label>Select</mat-label>
+                <mat-select formControlName="altitude">
+                    <mat-option *ngFor="let option of issFG.altitudeTypeOptions" [value]="option.value">
+                        {{ option.viewValue }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="issFG.get('altitude')?.hasError('required')">
+                    This field is required
+                </mat-error>
+              </mat-form-field>
+        </div>
+        <div class="form-item">
+            <label class="form-item__label">{{issFG.ISS_FORM_TITLES.velocity | uppercase }}:</label>
+            <mat-form-field appearance="fill" class="form-item__select">
+                <mat-label>Select</mat-label>
+                <mat-select formControlName="velocity">
+                    <mat-option *ngFor="let option of issFG.velocityTypeOptions" [value]="option.value">
+                        {{ option.viewValue }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="issFG.get('velocity')?.hasError('required')">
+                    This field is required
+                </mat-error>
+              </mat-form-field>  
+        </div>
+
+        <div class="form-item">
+            <label class="form-item__label">{{'Date' | uppercase }}:</label>
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input 
+                    matInput
+                    [setOutputDateFormat]="issFG.DATE_FORMATS.dateDefault"
+                    [matDatepicker]="picker" formControlName="dateTime">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              
+        </div>
+        <button type="submit" mat-raised-button [disabled]="!issFG.valid">SUBMIT</button>
+    </form>
+</div>

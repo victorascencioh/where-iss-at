@@ -1,0 +1,33 @@
+.form-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.form-item__label {
+    align-self: flex-start;
+    @media only screen and (min-width: 768px) {
+        align-self: center;
+    }
+}
+
+.form-item__select {
+    width: 100%;
+    @media only screen and (min-width: 768px) {
+        width: 50%;
+    }
+}
+
+button[type='submit'] {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    @media only screen and (min-width: 768px) {
+        margin-right: initial;
+        width: 25%;
+    }
+}
