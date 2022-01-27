@@ -47,7 +47,7 @@ export class IssDetailsComponent implements OnInit {
       },
       { 
         name: ISS_FORM_TITLES.time,
-        result: formatDate(this.issDetails?.dateTime as Date, 'MM.dd.yyyy HH:MM:ss', 'en-GB'),
+        result: formatDate(this.issDetails?.dateTime as Date, 'dd.MM.yyyy HH:MM:ss', 'en-DE'),
       },
       {
         name: 'latitude',

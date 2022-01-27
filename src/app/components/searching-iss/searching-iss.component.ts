@@ -21,7 +21,7 @@ export class SearchingIssComponent implements OnInit {
       dateTime: this.issFG.get('dateTime')?.value._d
     }
 
-    console.log(issData.dateTime);
+    console.log(this.issFG.get('dateTime')?.value);
 
     this.issApiService.findIss(issData).subscribe();
   }
