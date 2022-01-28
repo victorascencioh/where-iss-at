@@ -80,9 +80,4 @@ export class IssDetailsComponent implements OnInit {
       this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(result);
     });
   }
-
-  printContent() {
-    console.log('printing');
-  }
-
 }
